@@ -29,29 +29,38 @@ export function CountriesBarChart({ data, isLoading = false }: CountriesBarChart
     );
   }
 
+  const chartTitle = `Top ${data.length} ${data.length === 1 ? 'Country' : 'Countries'}`;
+  const totalFilms = data.reduce((sum, d) => sum + d.count, 0);
+
   return (
-    <ResponsiveContainer width="100%" height={500}>
-      <BarChart
-        data={data}
-        layout="vertical"
-        margin={{ top: 20, right: 30, left: 100, bottom: 20 }}
-      >
-        <XAxis type="number" />
-        <YAxis type="category" dataKey="country" width={90} />
-        <Tooltip
-          contentStyle={{
-            backgroundColor: 'hsl(var(--background))',
-            border: '1px solid hsl(var(--border))',
-            borderRadius: '6px',
-          }}
-          formatter={(value: number) => [`${value} films`, 'Count']}
-        />
-        <Bar dataKey="count" radius={[0, 4, 4, 0]}>
-          {data.map((entry, index) => (
-            <Cell key={`cell-${entry.country}`} fill={colors[index]} />
-          ))}
-        </Bar>
-      </BarChart>
-    </ResponsiveContainer>
+    <div className="space-y-4">
+      <div className="flex items-center justify-between">
+        <h3 className="text-lg font-semibold text-muted-foreground">{chartTitle}</h3>
+        <p className="text-sm text-muted-foreground">Total films: {totalFilms}</p>
+      </div>
+      <ResponsiveContainer width="100%" height={500}>
+        <BarChart
+          data={data}
+          layout="vertical"
+          margin={{ top: 20, right: 30, left: 100, bottom: 20 }}
+        >
+          <XAxis type="number" />
+          <YAxis type="category" dataKey="country" width={90} />
+          <Tooltip
+            contentStyle={{
+              backgroundColor: 'hsl(var(--background))',
+              border: '1px solid hsl(var(--border))',
+              borderRadius: '6px',
+            }}
+            formatter={(value: number) => [`${value} films`, 'Count']}
+          />
+          <Bar dataKey="count" radius={[0, 4, 4, 0]}>
+            {data.map((entry, index) => (
+              <Cell key={`cell-${entry.country}`} fill={colors[index]} />
+            ))}
+          </Bar>
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
   );
 }
