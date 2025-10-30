@@ -3,8 +3,9 @@ import './globals.css';
 import { QueryProvider } from '@/lib/providers/query-provider';
 
 export const metadata: Metadata = {
-  title: 'Film Canon Visualized',
-  description: 'Interactive visualization of Sight and Sound Greatest Films poll',
+  title: 'Film Canon Visualized - Sight and Sound Greatest Films',
+  description:
+    'Interactive visualization of 4,850 films from the Sight and Sound Greatest Films poll (1952-2022)',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
