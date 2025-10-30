@@ -16,6 +16,15 @@
     "format": "biome format --write .",
     "check": "biome check --write .",
     "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:headed": "playwright test --headed",
+    "ladle:serve": "ladle serve",
+    "ladle:build": "ladle build",
+    "ladle:preview": "ladle preview",
     "prepare": "lefthook install"
   },
   "dependencies": {
@@ -40,15 +49,23 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.2",
+    "@ladle/react": "5.1.0",
+    "@playwright/test": "1.56.1",
     "@tailwindcss/postcss": "^4.1.16",
+    "@testing-library/jest-dom": "6.6.3",
+    "@testing-library/react": "16.0.1",
     "@types/chroma-js": "3.1.1",
     "@types/node": "^22.10.7",
     "@types/react": "^19.0.6",
     "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "5.0.0",
     "autoprefixer": "^10.4.20",
+    "jsdom": "25.0.1",
     "lefthook": "^2.0.2",
     "postcss": "^8.4.49",
     "tailwindcss": "^4.1.16",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vite-tsconfig-paths": "5.1.4",
+    "vitest": "4.0.4"
   }
 }
