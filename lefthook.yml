@@ -11,7 +11,7 @@ pre-commit:
       stage_fixed: true
 
     format:
-      glob: "*.{js,ts,jsx,tsx,json,css,md}"
+      glob: "*.{js,ts,jsx,tsx,json,css}"
       run: pnpm biome format --write {staged_files}
       stage_fixed: true
 
