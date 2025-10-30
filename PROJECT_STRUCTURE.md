@@ -27,7 +27,7 @@ film-canon-visualized/
 ├── package.json
 ├── pnpm-lock.yaml
 ├── next.config.ts               # Next.js configuration
-├── tailwind.config.ts           # Tailwind CSS configuration
+├── postcss.config.mjs           # PostCSS configuration (Tailwind v4)
 ├── tsconfig.json                # TypeScript configuration
 ├── vitest.config.mts            # Vitest configuration
 ├── playwright.config.ts         # Playwright configuration
