@@ -1,20 +1,18 @@
-import { Button } from '@/components/ui/button';
+import { CountriesChartContainer } from '@/components/charts/countries-chart-container';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between text-center">
-        <h1 className="text-4xl font-bold mb-4">Sight and Sound Greatest Films Visualization</h1>
-        <p className="text-xl text-muted-foreground mb-8">
-          Interactive visualization of 4,850 films from the Sight and Sound Greatest Films poll
-          (1952-2022)
-        </p>
-        <div className="flex gap-4 justify-center">
-          <Button size="lg">Explore Films</Button>
-          <Button variant="outline" size="lg">
-            View Data
-          </Button>
+    <main className="container mx-auto py-8 px-4">
+      <div className="space-y-8">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold mb-4">Sight and Sound Greatest Films Visualization</h1>
+          <p className="text-xl text-muted-foreground">
+            Interactive visualization of 4,850 films from the Sight and Sound Greatest Films poll
+            (1952-2022)
+          </p>
         </div>
+
+        <CountriesChartContainer />
       </div>
     </main>
   );
