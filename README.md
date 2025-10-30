@@ -4,7 +4,7 @@ Interactive data visualization of the Sight and Sound Greatest Films poll (1952-
 
 ## Overview
 
-This project visualizes data from 4,850 films across 8 polling years, exploring how critical opinion has evolved over 70 years of cinema history.
+This project visualizes data from 4,850 films across 8 polling decades, exploring how critical opinion has evolved over 70 years of cinema history.
 
 ## Tech Stack
 
