@@ -1,0 +1,22 @@
+# Lefthook configuration
+# Runs linting and formatting on git pre-commit
+
+pre-commit:
+  parallel: true
+
+  commands:
+    lint:
+      glob: "*.{js,ts,jsx,tsx,json}"
+      run: pnpm biome lint --write {staged_files}
+      stage_fixed: true
+
+    format:
+      glob: "*.{js,ts,jsx,tsx,json,css,md}"
+      run: pnpm biome format --write {staged_files}
+      stage_fixed: true
+
+# Optionally, add pre-push hook for type checking
+pre-push:
+  commands:
+    typecheck:
+      run: pnpm typecheck
